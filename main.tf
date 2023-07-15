@@ -28,9 +28,9 @@ resource "aws_instance" "blog" {
 }
 
 resource "aws_security_group" "blog" {
-  name = "blog"
+  name        = "blog"
   description = "Allow http and https inbound and everthing outbound"
-  aws_vpc     = data.aws_vpc.default.id
+  vpc_id      = data.aws_vpc.default.id
 
   vpc_security_group_ids = [aws_security_group.blog.id]
 
